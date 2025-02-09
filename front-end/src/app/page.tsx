@@ -1,101 +1,58 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+   <>
+   <Navbar />
+   {/* hero */}
+   <div className="flex justify-around items-center mt-20">
+    <div className="">
+      <div className="social flex gap-3">
+        <a href="/"><img className="h-10" src="/facebook.png" alt="" /></a>
+        <a href="/"> <img className="h-10" src="/twitter.png" alt="" /></a>
+        <a href="/">  <img className="h-10" src="/insta.png" alt="" /></a>
+        <a href="/"> <img className="h-10" src="/website.png" alt="" /></a>
+      </div>
+      <p className="font-bold text-7xl darkblue ">Aakash</p>
+      <p className="font-bold text-7xl darkblue">Research Labs</p>
+      <div className="flex gap-5 mt-5">
+      <Link className='bgdarkblue text-white px-7 py-2 font-bold rounded-lg' href={"/"}>Explore Domains</Link>
+      <Link className='bgdarkblue text-white px-7 py-2 font-bold rounded-lg' href={"/"}>Join US</Link>
+      </div>
     </div>
+    <div>
+      <img src="/logo1.png" className="h-96" alt="" />
+    </div>
+   </div>
+
+   {/* 2nd */}
+   <div className="offwhite">
+    <p className="text-center font-bold text-4xl darkblue mt-8 pt-10">About Aakash Research Labs</p>
+    <p className="text-center font-semibold text-xl  pt-8 px-20" style={{color:"#6C6C6C"}}>Aakash Research Labs (ARL) is a student-led innovation hub dedicated to AI/ML, IoT, Electronics, Healthcare, Technical, Creatives and Corporate. We bridge the gap between research and real-world applications through hands-on projects, collaborations, and technical excellence.</p>
+
+    <p className="text-center font-semibold text-xl  pt-10 px-20"  style={{color:"#6C6C6C"}}>" Explore, Learn, Excel "</p>
+    <div className="flex justify-center pt-8 pb-10">
+  <Link className='bgdarkblue text-white px-7 py-2 font-bold rounded-lg' href={"/"}>Learn more</Link>
+</div>
+
+   </div>
+
+   {/* 3rd */}
+
+   <div className="flex justify-around items-center pt-10 pb-10">
+    <div>
+      <p className="font-semibold text-6xl darkblue ">Our Mission </p>
+      <p className="font-semibold text-6xl darkblue ">& Vision</p>
+      <p className="w-96  mt-5">To foster innovation, create cutting edge
+solutions, and contribute to technological
+advancement by supporting research and
+development activities among students.</p>
+    </div>
+    <div>
+      <img className="h-96" src="/1.jpg" alt="" />
+    </div>
+   </div>
+   </>
   );
 }
