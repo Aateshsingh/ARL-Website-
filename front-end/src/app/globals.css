@@ -85,3 +85,13 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.darkblue{
+  color: #1A3449;
+}
+.bgdarkblue{
+  background-color: #214157;
+}
+.offwhite{
+  background-color: #F6F6F6;
+}

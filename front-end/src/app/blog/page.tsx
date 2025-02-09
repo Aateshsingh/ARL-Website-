@@ -1,5 +1,5 @@
 "use client";
-
+import Navbar from "@/components/Navbar";
 import React from "react";
 import EmblaCarousel from "./components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
@@ -29,6 +29,8 @@ export default function Page() {
   ];
 
   return (
+    <>
+    <Navbar />
     <div ref={isLargeScreen ? containerRef : null} className="w-full">
       <div className="scroll-item mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 justify-items-center items-center">
@@ -103,5 +105,6 @@ export default function Page() {
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
       </div>
     </div>
+    </>
   );
 }
