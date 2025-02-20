@@ -57,7 +57,22 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		  animation: {
+			'infinite-scroll-left': 'infinite-scroll-left 25s linear infinite',
+			'infinite-scroll-right': 'infinite-scroll-right 25s linear infinite',
+			shimmer: "shimmer 2s infinite",
+		  },
+		  keyframes: {
+			'infinite-scroll-left': {
+			  from: { transform: 'translateX(0)' },
+			  to: { transform: 'translateX(-100%)' },
+			},
+			'infinite-scroll-right': {
+			  from: { transform: 'translateX(-100%)' },
+			  to: { transform: 'translateX(0)' },
+			},
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],

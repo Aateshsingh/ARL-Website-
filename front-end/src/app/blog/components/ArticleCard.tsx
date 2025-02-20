@@ -14,7 +14,7 @@ export default function ArticleCard({
   onReadMore,
 }: ArticleCardProps) {
   return (
-    <div className="relative max-w-md w-full sm:max-w-full md:max-w-md overflow-hidden rounded-2xl bg-zinc-900 shadow-lg">
+    <div className="relative max-w-md w-full sm:max-w-full md:max-w-md overflow-hidden rounded-2xl bg-zinc-900 shadow-lg border-4 hover:border-blue-500 transition-all">
       <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full">
         <Image
           src={imageUrl || "/placeholder.svg"}
