@@ -86,7 +86,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
 html::-webkit-scrollbar {
   display: none;
 }
@@ -196,4 +195,3 @@ background: #324F63;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
->>>>>>> main
