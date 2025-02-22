@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
@@ -151,40 +152,44 @@ html {
   animation: shimmer 2s infinite;
 }
 
-.darkblue{
+.darkblue {
   color: #1A3449;
 }
-.bgdarkblue{
+
+.bgdarkblue {
   background-color: #214157;
 }
-.offwhite{
+
+.offwhite {
   background-color: #d7d7d7;
 }
 
-input{
-margin-top: 30px;
-width: 506px;
-padding-left: 20px;
-height: 64px;
-flex-shrink: 0;
-background-color: #F6F6F6;
-border: 1px solid #324F63;
+input {
+  margin-top: 30px;
+  width: 506px;
+  padding-left: 20px;
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #F6F6F6;
+  border: 1px solid #324F63;
 }
 
-.formbtn{
+.formbtn {
   font-weight: 700;
   margin-top: 20px;
   width: 196px;
   color: white;
-height: 49px;
-flex-shrink: 0;
-background: #324F63;
+  height: 49px;
+  flex-shrink: 0;
+  background: #324F63;
 }
 
 /* Add this to your global CSS or the component's CSS file */
 .loader {
-  border: 4px solid #f3f3f3; /* Light gray background */
-  border-top: 4px solid #3498db; /* Blue top border */
+  border: 4px solid #f3f3f3;
+  /* Light gray background */
+  border-top: 4px solid #3498db;
+  /* Blue top border */
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -192,6 +197,27 @@ background: #324F63;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(45deg);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1.5s infinite;
 }
