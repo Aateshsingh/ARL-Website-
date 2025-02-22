@@ -1,12 +1,14 @@
 'use client'
 import React, { useState } from 'react';
 import axios from 'axios';
+import { PulseLoader } from 'react-spinners';
+import { Button } from './ui/button';
 
 function Form() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    phone: ''
   });
   const [loading, setLoading] = useState(false);
 
@@ -23,9 +25,9 @@ function Form() {
     setLoading(true); // Start loading when form is being submitted
     
     try {
-      const response = await axios.post('http://localhost:8000/api/email/send', formData);
+      const response = await axios.post('http://localhost:8000/api/joinus/send', formData);
       alert(response.data.message);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '' });
     } catch (error) {
       alert('Failed to send message!');
     } finally {
@@ -34,53 +36,62 @@ function Form() {
   };
 
   return (
-    <div className="flex justify-around pb-10 offwhite py-10">
-      <div>
-        <p className="darkblue text-4xl font-medium">Leave us a message</p>
-        <form className="flex flex-col w-96" onSubmit={handleSubmit}>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      
+    <div className="w-full max-w-lg px-6 py-8 my-8 bg-white rounded-xl shadow-lg">
+      <h2 className="text-4xl font-bold text-blue-900 mb-4">
+                        Join us
+                      </h2>
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        <div>
+          <label className="block text-gray-700 mb-2">Full Name</label>
           <input
             type="text"
+            className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
             name="name"
-            placeholder="Name"
             value={formData.name}
             onChange={handleChange}
             required
           />
+        </div>
+  
+        <div>
+          <label className="block text-gray-700 mb-2">Email</label>
           <input
             type="email"
+            className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
             name="email"
-            placeholder="Your Email"
             value={formData.email}
             onChange={handleChange}
             required
           />
+        </div>
+  
+        <div>
+          <label className="block text-gray-700 mb-2">Contact Number</label>
           <input
-            name="message"
-            placeholder="Message"
-            value={formData.message}
+            type="text"
+            className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            name="phone"
+            value={formData.phone}
             onChange={handleChange}
             required
           />
-          <button className="formbtn relative flex items-center justify-center" type="submit">
-            {loading ? (
-              <div className="w-6 h-6 border-4 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
-            ) : (
-              'Send'
-            )}
-          </button>
-        </form>
-      </div>
-      <div className="bgdarkblue">
-        <p className="text-5xl font-bold text-white px-32 py-10">Get in Touch</p>
-        <p className="text-center text-white text-lg">arl.corporate.team@gmail.com</p>
-        <div className="social flex gap-3 mt-20 justify-center">
-          <a href="/"><img className="h-10 invert" src="/facebook.png" alt="Facebook" /></a>
-          <a href="/"><img className="h-10 invert" src="/twitter.png" alt="Twitter" /></a>
-          <a href="/"><img className="h-10 invert" src="/insta.png" alt="Instagram" /></a>
-          <a href="/"><img className="h-10 invert" src="/website.png" alt="Website" /></a>
         </div>
-      </div>
+  
+        {loading ? (
+          <div className="flex justify-center">
+            <PulseLoader color="#36d7b7" loading={loading} size={15} />
+          </div>
+        ) : (
+          <Button className="w-full py-3 text-lg bg-blue-900 hover:bg-blue-800 text-white rounded-lg">
+            Join
+          </Button>
+        )}
+      </form>
     </div>
+  </div>
+  
   );
 }
 

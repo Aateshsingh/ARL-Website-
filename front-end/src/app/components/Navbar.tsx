@@ -31,13 +31,13 @@ export function Navbar() {
           <Link href="/" className="text-md font-bold text-gray-900 hover:text-gray-600">
             Home
           </Link>
-          <Link href="/domains" className="text-md font-bold text-gray-900 hover:text-gray-600">
+          <Link href="/domain" className="text-md font-bold text-gray-900 hover:text-gray-600">
             Domains
           </Link>
           <Link href="/project" className="text-md font-bold text-gray-900 hover:text-gray-600">
             Project
           </Link>
-          <Link href="/events" className="text-md font-bold text-gray-900 hover:text-gray-600">
+          <Link href="/event" className="text-md font-bold text-gray-900 hover:text-gray-600">
             Events
           </Link>
           <Link href="/blog" className="text-md font-bold text-gray-900 hover:text-gray-600">
@@ -46,7 +46,10 @@ export function Navbar() {
           <Link href="/team" className="text-md font-bold text-gray-900 hover:text-gray-600">
             Team
           </Link>
+          <Link href="/join-us">
           <Button className="ml-4">Join us</Button>
+          
+          </Link>
         </div>
 
         {/* Mobile Navigation */}
@@ -70,7 +73,7 @@ export function Navbar() {
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/domian"
                   className="text-sm font-medium text-gray-900 hover:text-gray-600"
                   onClick={() => setIsOpen(false)}
                 >
@@ -78,7 +81,7 @@ export function Navbar() {
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/project"
                   className="text-sm font-medium text-gray-900 hover:text-gray-600"
                   onClick={() => setIsOpen(false)}
                 >
@@ -86,7 +89,7 @@ export function Navbar() {
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/event"
                   className="text-sm font-medium text-gray-900 hover:text-gray-600"
                   onClick={() => setIsOpen(false)}
                 >
@@ -94,7 +97,7 @@ export function Navbar() {
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/team"
                   className="text-sm font-medium text-gray-900 hover:text-gray-600"
                   onClick={() => setIsOpen(false)}
                 >
@@ -109,9 +112,11 @@ export function Navbar() {
                   Blog
                 </Link>
                 {/* Other navigation links */}
+                <Link href="/join-us">
                 <Button className="mt-4 w-full" onClick={() => setIsOpen(false)}>
                   Join us
                 </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

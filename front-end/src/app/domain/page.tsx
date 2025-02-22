@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 function page() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='p-10'>
       <p className="font-semibold text-6xl darkblue ">Domains</p>
 

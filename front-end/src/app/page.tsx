@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SiGithub, SiLinkedin } from "react-icons/si";
@@ -10,11 +10,41 @@ import { Button } from "@/components/ui/button";
 import { SponsorsGrid } from "./components/SponsorsGrid";
 import { useSponsors } from "@/lib/hooks/useSponsors";
 import TeamMemberCard from "./components/TeamMemberCard";
+import axios from 'axios';
+import { PulseLoader } from "react-spinners";
 
 export default function Home() {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const sponsors = useSponsors();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
 
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setLoading(true); // Start loading when form is being submitted
+    
+    try {
+      const response = await axios.post('http://localhost:8000/api/email/send', formData);
+      alert(response.data.message);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      alert('Failed to send message!');
+    } finally {
+      setLoading(false); // Stop loading after submission is complete
+    }
+  };
     useEffect(() => {
       // Intersection Observer setup
       const observer = new IntersectionObserver(
@@ -73,12 +103,15 @@ export default function Home() {
                   <Button className="bg-white text-blue-900 hover:bg-blue-100 px-3 py-2 md:px-8 md:py-6 text-lg font-semibold rounded-xl shadow-lg transition-all">
                     Explore Domains
                   </Button>
+                  <Link href={"/join-us"}>
+                  
                   <Button
                     variant="outline"
                     className="border-2 bg-transparent border-white text-white hover:bg-white/10 hover:text-white px-3 py-2 md:px-8 md:py-6 text-lg font-semibold rounded-xl"
-                  >
+                    >
                     Join Our Team
                   </Button>
+                    </Link>
                 </div>
 
                 <div className="flex gap-6 mt-5 items-center">
@@ -364,7 +397,7 @@ export default function Home() {
 
         {/* Team Section */}
         <section className="snap-start min-h-[calc(100vh-64px)] flex items-center justify-center w-full bg-white">
-          <div className="w-full px-4 sm:px-6 lg:px-8 py-15">
+          <div className="w-full px-4 sm:px-6 lg:px-8 py-15 ">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold text-blue-900 mb-4">
@@ -375,35 +408,46 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr">
-                {[1, 2, 3, 4].map((member) => (
-                  <TeamMemberCard
-                    key={member}
-                    name={
-                      [
-                        "Dr. Anika Patel",
-                        "Rohan Verma",
-                        "Sneha Gupta",
-                        "Arjun Khanna",
-                      ][member % 4]
-                    }
-                    role={
-                      [
-                        "Lead AI Researcher",
-                        "IoT Architect",
-                        "Healthcare Lead",
-                        "Creative Director",
-                      ][member % 4]
-                    }
-                    image={`/1.jpg`}
-                    socials={[
-                      { icon: SiLinkedin, url: "#" },
-                      { icon: SiGithub, url: "#" },
-                      { icon: FaXTwitter, url: "#" },
-                    ]}
-                  />
-                ))}
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr ">
+  {[
+    "Dr.-S.-Vasanthadev-Suryakala",
+    "Dr.T.-Rajalakshmi",
+    "Vallabh Sumanth",
+    "Tejasvin Kansal",
+    "Harshith Kamal",
+    "Naseeya Begum",
+    "Daivik Reddy",
+    "Karishma Prasad",
+    "Aatesh Kumar Singh",
+    "Kusum Gupta",
+  ].map((name, index) => (
+    <TeamMemberCard
+      key={index}
+      name={name}
+      role={
+        [
+          "",
+          "",
+          "Chairperson and AI ML Head",
+          "Head of Operations and Electronics & IOT Domain Advisor",
+          "Electronics and IOT Domain Head",
+          "Secretary and Healthcare Domain Advisor",
+          "Corporate Domain Head",
+          "Healthcare Domain Head",
+          "AI ML Advisor and Technical Head",
+          "Corporate Domain Advisor",
+        ][index]
+      }
+      image={`/t${index + 1}.jpeg`} 
+      socials={[
+        { icon: SiLinkedin, url: "#" },
+        { icon: SiGithub, url: "#" },
+        { icon: FaXTwitter, url: "#" },
+      ]}
+    />
+  ))}
+</div>
+
             </div>
           </div>
         </section>
@@ -461,7 +505,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <form className="bg-white p-8 rounded-xl shadow-2xl">
+              <form className="bg-white p-8 rounded-xl shadow-2xl" onSubmit={handleSubmit}>
                 <div className="space-y-6">
                   <div>
                     <label className="block text-gray-700 mb-2">
@@ -470,6 +514,10 @@ export default function Home() {
                     <input
                       type="text"
                       className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                      name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
                     />
                   </div>
 
@@ -478,6 +526,10 @@ export default function Home() {
                     <input
                       type="email"
                       className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
 
@@ -486,12 +538,22 @@ export default function Home() {
                     <textarea
                       rows={4}
                       className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
-
-                  <Button className="w-full py-6 text-lg bg-blue-900 hover:bg-blue-800">
+                  {loading ? (
+                <div className="flex justify-center">
+                  <PulseLoader color="#36d7b7" loading={loading} size={15} />
+                </div>
+              ) : (
+                  <Button className="w-full py-6 text-lg bg-blue-900 hover:bg-blue-800"
+                  type="submit">
                     Send Message
                   </Button>
+                  )}
                 </div>
               </form>
             </div>

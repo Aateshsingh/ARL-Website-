@@ -1,11 +1,6 @@
 "use client";
-<<<<<<< HEAD
 
 import React, { useEffect, useRef } from "react";
-=======
-import Navbar from "@/components/Navbar";
-import React from "react";
->>>>>>> main
 import EmblaCarousel from "./components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import "./components/embla.css";
@@ -63,7 +58,7 @@ export default function Page() {
   }, []);
 
   return (
-<<<<<<< HEAD
+    <>
     <div className="relative">
       <div className="snap-y snap-mandatory h-[calc(100vh-64px)] overflow-y-auto scroll-smooth">
         <section className="snap-start min-h-[calc(100vh-64px)] flex items-center justify-center w-full">
@@ -92,44 +87,6 @@ export default function Page() {
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r to-blue-300 from-blue-800 bg-clip-text text-transparent">
                       BLOGSPOT
                     </h1>
-=======
-    <>
-    <Navbar />
-    <div ref={isLargeScreen ? containerRef : null} className="w-full">
-      <div className="scroll-item mx-auto px-4">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 justify-items-center items-center">
-          <div className="lg:sticky lg:top-8 lg:h-fit">
-            <header className="max-w-2xl mx-auto px-4 py-8 space-y-8 flex flex-col items-center justify-center text-center">
-              <div className="grid items-center justify-items-center gap-2">
-                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 items-center">
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-heading">
-                    ARL{" "}
-                  </h1>
-                  <Image src={"arl-logo.svg"} alt={""} width={70} height={70} />
-                </div>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-heading">
-                  BLOGSPOT
-                </h1>
-              </div>
-
-              <p className="text-center text-subheading text-lg md:text-xl font-bold">
-                Because Even Nerds Need a Blog
-              </p>
-
-              <div className="w-auto grid grid-cols-1 sm:grid-cols-2 gap-4 ">
-                {categories.map((column, colIndex) => (
-                  <div
-                    key={colIndex}
-                    className="space-y-2 sm:space-y-4 px-2 sm:px-5"
-                  >
-                    <Button
-                      key={colIndex}
-                      variant={colIndex % 2 == 0 ? "default" : "secondary"}
-                      className="w-full"
-                    >
-                      {column}
-                    </Button>
->>>>>>> main
                   </div>
 
                   <p className="text-xl text-blue-500 font-medium">

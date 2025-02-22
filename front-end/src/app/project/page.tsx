@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 function page() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="py-10 px-10">
    <p className="font-semibold text-6xl darkblue ">Projects </p>
 <div className="py-10 flex flex-wrap gap-5 ">

@@ -19,7 +19,7 @@ interface TeamMemberCardProps {
 const TeamMemberCard = ({ name, role, image, socials }: TeamMemberCardProps) => (
   <motion.div 
     whileHover={{ y: -10 }}
-    className="relative group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden"
+    className="relative group bg-blue-100 rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden"
   >
     <div className="aspect-square relative overflow-hidden">
       <Image
