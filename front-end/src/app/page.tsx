@@ -83,6 +83,37 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
+  const projects = [
+    {
+      id: 1,
+      title: 'Smart Cane for Blind',
+      description: 'Navigate Life with Confidence',
+      tags: ['Obstacle Detection', 'Real-Time Feedback', 'Navigational Assistance', 'Emergency Communication', 'Impact'],
+      image: '/smartcane.jpeg',
+    },
+    {
+      id: 2,
+      title: 'OSTEOPOROSIS',
+      description: 'Detection Using Custom CNN',
+      tags: ['Custom CNN Architecture', 'High Accuracy', 'Scalable', 'Impact'],
+      image: '/osteorobosis.jpeg',
+    },
+    {
+      id: 3,
+      title: 'Solar panel and Battery Maintenance Using IoT',
+      description: '',
+      tags: ['Solar Panel', 'IoT Sensor', 'Smart Automated System'],
+      image: '/solar.jpeg',
+    },
+    {
+      id: 4,
+      title: 'Penguin OS',
+      description: '',
+      tags: ['Enhanced Security', 'Open-Source Alternatives', 'Optimized Performance', 'Results'],
+      image: '/penguin.jpeg',
+    },
+  ];
+  
 
   return (
     <div className="relative">
@@ -106,9 +137,11 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-4 mt-8">
+                <Link href={"/domain"}>
                   <Button className="bg-white text-blue-900 hover:bg-blue-100 px-3 py-2 md:px-8 md:py-6 text-lg font-semibold rounded-xl shadow-lg transition-all">
                     Explore Domains
                   </Button>
+                  </Link>
                   <Link href={"/join-us"}>
                     <Button
                       variant="outline"
@@ -219,7 +252,7 @@ export default function Home() {
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
               <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden border-8 border-white shadow-2xl">
                 <Image
-                  src="/1.jpg"
+                  src="/vision.jpeg"
                   alt="Visionary technology"
                   fill
                   className="object-cover"
@@ -283,42 +316,40 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[1, 2, 3].map((project) => (
-                  <div
-                    key={project}
-                    className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all"
-                  >
-                    <div className="h-48 bg-gray-100 rounded-t-xl overflow-hidden">
-                      <Image
-                        // src={`/project-${project}.jpg`}
-                        src={`/1.jpg`}
-                        alt="Project"
-                        width={400}
-                        height={300}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-blue-900 mb-2">
-                        AI-Powered Healthcare Diagnostic
-                      </h3>
-                      <p className="text-gray-600 mb-4">
-                        Revolutionizing early disease detection using deep
-                        learning
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {["AI/ML", "Healthcare", "Python"].map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              {projects.map((project) => (
+        <div
+          key={project.id}
+          className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div className="h-48 bg-gray-100 rounded-t-xl overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={400}
+              height={300}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+            />
+          </div>
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-blue-900 mb-2">
+              {project.title}
+            </h3>
+            <p className="text-gray-600 mb-4">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
               </div>
             </div>
           </div>
