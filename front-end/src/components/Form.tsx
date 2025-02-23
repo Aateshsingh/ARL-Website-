@@ -12,7 +12,7 @@ function Form() {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -33,6 +33,7 @@ function Form() {
       setFormData({ name: "", email: "", phone: "" });
     } catch (error) {
       alert("Failed to send message!");
+      console.log(error);
     } finally {
       setLoading(false); // Stop loading after submission is complete
     }

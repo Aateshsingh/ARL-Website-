@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function Navbar() {
   return (
     <div className='flex justify-between items-center pr-20 pt-2'>
       <div>
-        <img src="/logo.png" alt="" className='h-14' />
+        <Image src="/logo.png" alt="AAKASH RESEARCH LABS" width={300} height={300} className='h-14' />
       </div>
       <div>
         <ul className='flex justify-center gap-14 darkblue font-bold items-center'>

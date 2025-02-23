@@ -2,12 +2,17 @@ import { TeamMember } from "@/lib/types/team";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ComponentType } from "react";
 
-interface TeamMemberCardProps
-  extends Pick<
-    TeamMember,
-    "name" | "role" | "image" | "tags" | "socials" | "highlight" | "badgeLabel"
-  > {}
+type TeamMemberCardProps = Pick<
+  TeamMember,
+  "name" | "role" | "image" | "tags" | "socials" | "highlight" | "badgeLabel"
+>;
+
+interface SocialLink {
+  icon: ComponentType;
+  url: string;
+}
 
 const TeamMemberCard = ({
   name,
@@ -85,13 +90,13 @@ const TeamMemberCard = ({
           highlight ? "pt-6" : "pt-4"
         }`}
       >
-        {socials?.map(({ icon: Icon, url }: any, i: number) => (
+        {socials?.map(({ icon: Icon, url }: SocialLink, i: number) => (
           <Link
             key={i}
             href={url}
             className="p-2 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors"
           >
-            <Icon className="w-5 h-5 text-blue-900" />
+            <Icon />
           </Link>
         ))}
       </div>

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import { FaFacebookF, FaInstagram, FaRegLightbulb } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { SponsorsGrid } from "./components/SponsorsGrid";
@@ -26,7 +26,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -47,6 +47,7 @@ export default function Home() {
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       alert("Failed to send message!");
+      console.log(error);
     } finally {
       setLoading(false); // Stop loading after submission is complete
     }
@@ -275,7 +276,7 @@ export default function Home() {
                     <p className="text-gray-600 leading-relaxed">
                       To empower student innovators through cutting-edge
                       research infrastructure, industry collaborations, and
-                      multidisciplinary projects that solve tomorrow's
+                      multidisciplinary projects that solve tomorrow&apos;s
                       challenges.
                     </p>
                   </div>
@@ -285,7 +286,7 @@ export default function Home() {
                       Vision
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Becoming Asia's premier student-led research ecosystem
+                      Becoming Asia&apos;s premier student-led research ecosystem
                       driving technological breakthroughs and nurturing future
                       tech leaders by 2030.
                     </p>
@@ -577,7 +578,7 @@ export default function Home() {
               <div className="text-white">
                 <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
                 <p className="text-xl mb-8 max-w-xl">
-                  Have a groundbreaking idea or want to collaborate? Let's
+                  Have a groundbreaking idea or want to collaborate? Let&apos;s
                   connect and build the future together!
                 </p>
 

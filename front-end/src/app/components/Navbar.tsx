@@ -6,7 +6,12 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -28,27 +33,26 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center md:gap-5 lg:gap-10 md:flex">
-          <Link href="/" className="text-md font-bold text-gray-900 hover:text-gray-600">
+          <Link href="/" className={"relative text-md font-bold text-gray-900 hover:text-gray-600 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"}>
             Home
           </Link>
-          <Link href="/domain" className="text-md font-bold text-gray-900 hover:text-gray-600">
+          <Link href="/domain" className={"relative text-md font-bold text-gray-900 hover:text-gray-600 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"}>
             Domains
           </Link>
-          <Link href="/project" className="text-md font-bold text-gray-900 hover:text-gray-600">
-            Project
+          <Link href="/project" className={"relative text-md font-bold text-gray-900 hover:text-gray-600 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"}>
+            Projects
           </Link>
-          <Link href="/event" className="text-md font-bold text-gray-900 hover:text-gray-600">
+          <Link href="/event" className={"relative text-md font-bold text-gray-900 hover:text-gray-600 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"}>
             Events
           </Link>
-          <Link href="/blog" className="text-md font-bold text-gray-900 hover:text-gray-600">
+          <Link href="/blog" className={"relative text-md font-bold text-gray-900 hover:text-gray-600 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"}>
             Blog
           </Link>
-          <Link href="/team" className="text-md font-bold text-gray-900 hover:text-gray-600">
+          <Link href="/team" className={"relative text-md font-bold text-gray-900 hover:text-gray-600 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"}>
             Team
           </Link>
           <Link href="/join-us">
-          <Button className="ml-4">Join us</Button>
-          
+            <Button className="ml-4">Join us</Button>
           </Link>
         </div>
 
@@ -113,9 +117,12 @@ export function Navbar() {
                 </Link>
                 {/* Other navigation links */}
                 <Link href="/join-us">
-                <Button className="mt-4 w-full" onClick={() => setIsOpen(false)}>
-                  Join us
-                </Button>
+                  <Button
+                    className="mt-4 w-full"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Join us
+                  </Button>
                 </Link>
               </div>
             </SheetContent>

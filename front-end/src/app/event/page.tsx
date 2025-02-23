@@ -5,9 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { events } from "@/data/events";
-import { Event } from "@/lib/types/events";
 
-function page() {
+function Page() {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
 
@@ -215,4 +214,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const domains = [
@@ -53,7 +53,7 @@ export default function DomainsPage() {
     <div className="relative overflow-clip">
       <div className="snap-y h-[calc(100vh-64px)] overflow-y-auto scroll-smooth">
       {/* Domain Sections */}
-      {domains.map((domain, index) => (
+      {domains.map((domain) => (
         <motion.section
           key={domain.title}
           className={`snap-start min-h-[calc(100vh-64px)] flex items-center justify-center w-full sticky top-0 ${domain.color}`}

@@ -1,14 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { teamMembers } from "@/data/team-member";
-import { useSponsors } from "@/lib/hooks/useSponsors";
 import TeamMemberCard from "../components/TeamMemberCard";
-import axios from "axios";
-import { PulseLoader } from "react-spinners";
-function page() {
+
+function Page() {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const sponsors = useSponsors();
   useEffect(() => {
     // Intersection Observer setup
     const observer = new IntersectionObserver(
@@ -70,4 +67,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -1,7 +1,7 @@
 'use client'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-function page() {
+function Page() {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   useEffect(() => {
   const observer = new IntersectionObserver(
@@ -127,4 +127,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
