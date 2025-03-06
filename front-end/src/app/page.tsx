@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { SponsorsGrid } from "./components/SponsorsGrid";
@@ -115,6 +116,10 @@ export default function Home() {
     },
   ];
   
+  const socialLinks = [
+    { Icon: FaInstagram, url: "https://www.instagram.com/aakashresearchlabs/" },
+    { Icon: FaLinkedin, url: "https://www.linkedin.com/company/aakash-research-labs/" },
+  ];
 
   return (
     <div className="relative">
@@ -154,20 +159,19 @@ export default function Home() {
                 </div>
 
                 <div className="flex gap-6 mt-5 items-center">
-                  <div className="flex gap-4">
-                    {[FaFacebookF, FaXTwitter, FaInstagram, SiGithub].map(
-                      (Icon, i) => (
-                        <Link
-                          key={i}
-                          href="#"
-                          className="p-3 bg-blue-500/10 rounded-full hover:bg-blue-500/20 transition-colors"
-                        >
-                          <Icon className="w-6 h-6 text-blue-500" />
-                        </Link>
-                      )
-                    )}
-                  </div>
-                </div>
+      <div className="flex gap-4">
+        {socialLinks.map(({ Icon, url }, i) => (
+          <Link
+            key={i}
+            href={url}
+            target="_blank"
+            className="p-3 bg-blue-500/10 rounded-full hover:bg-blue-500/20 transition-colors"
+          >
+            <Icon className="w-6 h-6 text-blue-500" />
+          </Link>
+        ))}
+      </div>
+    </div>
               </div>
 
               <div className="relative group flex-shrink-0">
@@ -588,34 +592,15 @@ export default function Home() {
                       <SiLinkedin className="w-6 h-6" />
                     </div>
                     <div>
+                        <a href="https://www.linkedin.com/company/aakash-research-labs/">
                       <p className="font-medium">Connect Professionally</p>
                       <p className="text-blue-200">
-                        linkedin.com/company/aakash-research
                       </p>
+                        </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-white/10 rounded-lg">
-                      <FaXTwitter className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Follow Updates</p>
-                      <p className="text-blue-200">@aakashresearch</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-white/10 rounded-lg">
-                      <SiGithub className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Explore Code</p>
-                      <p className="text-blue-200">
-                        github.com/aakash-research
-                      </p>
-                    </div>
-                  </div>
+          
                 </div>
               </div>
 

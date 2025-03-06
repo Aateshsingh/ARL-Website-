@@ -7,42 +7,42 @@ const domains = [
   {
     title: "AI/ML",
     description:
-      "Pioneering intelligent systems through machine learning algorithms and neural networks",
+      "Pioneering the development of advanced intelligent systems by leveraging cutting-edge machine learning algorithms and sophisticated neural networks to drive innovation and enhance automation.",
     image: "/aiml.png",
     color: "bg-blue-100",
   },
   {
     title: "Electronics & IoT",
     description:
-      "Building smart connected devices and embedded systems for real-world applications",
+      "Designing and developing intelligent, smart-connected devices and embedded systems tailored for real-world applications, enabling seamless integration, enhanced functionality, and improved efficiency across various industries.",
     image: "/iot.png",
     color: "bg-green-100",
   },
   {
     title: "Healthcare Tech",
     description:
-      "Developing cutting-edge medical devices and health monitoring systems",
+      "Innovating and developing state-of-the-art medical devices and advanced health monitoring systems to enhance patient care, improve diagnostics, and revolutionize healthcare solutions through cutting-edge technology.",
     image: "/healthcare.png",
     color: "bg-red-100",
   },
   {
     title: "Creative Tech",
     description:
-      "Merging technology with artistic expression through interactive installations",
+      "Bridging the gap between technology and artistic expression by creating immersive and interactive installations that engage audiences, evoke emotions, and redefine the boundaries of digital creativity.",
     image: "/creatives.png",
     color: "bg-purple-100",
   },
   {
     title: "Core Technical",
     description:
-      "Advancing fundamental engineering solutions and industrial applications",
+      "Driving innovation in fundamental engineering solutions and industrial applications by developing cutting-edge technologies, optimizing processes, and enhancing efficiency across various sectors.",
     image: "/tech.png",
     color: "bg-yellow-100",
   },
   {
     title: "Corporate & PR",
     description:
-      "Driving strategic partnerships and brand development in tech space",
+      "Forging strategic partnerships and spearheading brand development in the tech industry to foster innovation, expand market presence, and drive sustainable growth.",
     image: "/pr.png",
     color: "bg-pink-100",
   },
@@ -84,7 +84,7 @@ export default function DomainsPage() {
                 <h2 className="text-5xl font-bold text-blue-900">
                   {domain.title}
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed text-center">
+                <p className="text-lg px-10 text-gray-600 leading-relaxed text-center">
                   {domain.description}
                 </p>
               </motion.div>
