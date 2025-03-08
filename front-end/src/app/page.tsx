@@ -3,10 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { SiGithub, SiLinkedin } from "react-icons/si";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { SiLinkedin } from "react-icons/si";
+import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
-import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { SponsorsGrid } from "./components/SponsorsGrid";
 import { useSponsors } from "@/lib/hooks/useSponsors";

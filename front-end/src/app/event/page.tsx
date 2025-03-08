@@ -167,20 +167,36 @@ function Page() {
                             />
                           ) : (
                             <div className="w-full h-full flex flex-col items-center justify-center bg-blue-100">
-                              <p className="text-3xl font-bold">
-                                {new Date(event.date).getDate()}
-                              </p>
-                              <p className="text-lg text-blue-800">
-                                {new Date(event.date)
-                                  .toLocaleString("default", { month: "short" })
-                                  .toUpperCase()}
-                              </p>
-                              <p className="text-sm text-blue-600 mt-2">
-                                {new Date(event.date).toLocaleTimeString([], {
-                                  hour: "2-digit",
-                                  minute: "2-digit",
-                                })}
-                              </p>
+                              {new Date(event.date).getMonth() === 0 &&
+                              new Date(event.date).getDate() === 1 ? (
+                                // Display only the year if the date is just a year (Jan 1st scenario)
+                                <p className="text-3xl font-bold">
+                                  {new Date(event.date).getFullYear()}
+                                </p>
+                              ) : (
+                                // Otherwise, show the original format
+                                <>
+                                  <p className="text-3xl font-bold">
+                                    {new Date(event.date).getDate()}
+                                  </p>
+                                  <p className="text-lg text-blue-800">
+                                    {new Date(event.date)
+                                      .toLocaleString("default", {
+                                        month: "short",
+                                      })
+                                      .toUpperCase()}
+                                  </p>
+                                  <p className="text-sm text-blue-600 mt-2">
+                                    {new Date(event.date).toLocaleTimeString(
+                                      [],
+                                      {
+                                        hour: "2-digit",
+                                        minute: "2-digit",
+                                      }
+                                    )}
+                                  </p>
+                                </>
+                              )}
                             </div>
                           )}
                         </div>

@@ -23,25 +23,25 @@ export const events: Event[] = [
         id: 3,
         type: 'past',
         title: 'Tekmux 2024',
-        date: '2023-11-10 09:00',
+        date: '2024',
         description: 'Developed solutions for social impact challenges',
         tags: ['Social Impact', 'Hackathon', 'Innovation'],
-        image: '/events/tech-for-good.jpg'
+        image: '/events/tekmux-2024.jpg'
     },
     {
         id: 4,
         type: 'past',
-        title: 'Tekmux 2023',
-        date: '2023-09-20 16:00',
+        title: "AARUUSH TVS'24 Rally",
+        date: '2024',
         description: 'Hands-on sessions with industry IoT experts',
         tags: ['IoT', 'Workshop', 'Hardware'],
-        image: '/events/iot-workshop.jpg'
+        image: '/events/aaruush-tvs-rally-2024.jpg'
     },
     {
         id: 5,
         type: 'past',
-        title: 'Tekmux 2022',
-        date: '2023-07-15 09:00',
+        title: 'Tekmux 2023',
+        date: '2023',
         description: 'Collaborative problem-solving for global challenges',
         tags: ['Innovation', 'Collaboration', 'SDGs']
     }

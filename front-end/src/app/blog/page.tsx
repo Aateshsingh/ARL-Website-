@@ -9,11 +9,11 @@ import Image from "next/image";
 import ArticleCard from "./components/ArticleCard";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { blogDataTechBreakThorough } from "@/data/blog-tech-breakthrough";
+import { blogDataLatestInnovations } from "@/data/blog-latest-innovations";
 
 export default function Page() {
   const OPTIONS: EmblaOptionsType = { align: "start" };
-  const SLIDE_COUNT = 5;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   const categories = [
     "Host in AI World",
     "Latest in Tech",
@@ -143,7 +143,7 @@ export default function Page() {
                 Latest <span className="text-blue-600">Innovations</span>
               </h2>
 
-              <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+              <EmblaCarousel options={OPTIONS} data={blogDataLatestInnovations} />
             </div>
           </div>
         </section>
@@ -160,7 +160,7 @@ export default function Page() {
                 Tech <span className="text-blue-600">Breakthroughs</span>
               </h2>
 
-              <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+              <EmblaCarousel  options={OPTIONS} data={blogDataTechBreakThorough} />
             </div>
           </div>
         </section>

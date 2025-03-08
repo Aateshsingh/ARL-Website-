@@ -36,14 +36,14 @@ export const teamMembers: TeamMember[] = [
     {
         id: 5,
         name: "Tejasvin Kansal",
-        role: "Operations Head",
+        role: "Operations Head & Electronics & IOT Advisor",
         image: "/team/tejasvin-kansal.jpeg",
         tags: [],
     },
     {
         id: 6,
         name: "Aatesh Kumar Singh",
-        role: "Technical Head",
+        role: "Technical Head & AI/ML Advisor",
         image: "/team/aatesh-kumar-singh.jpeg",
         tags: [],
     },
@@ -57,7 +57,7 @@ export const teamMembers: TeamMember[] = [
     {
         id: 8,
         name: "Naseeya Begum",
-        role: "Secretary",
+        role: "Secretary & Healthcare Advisor",
         image: "/team/naseeya-begum.jpeg",
         tags: [],
     },
@@ -77,23 +77,23 @@ export const teamMembers: TeamMember[] = [
     },
     {
         id: 11,
+        name: "S. Harish",
+        role: "Creatives Domain Head",
+        image: "/team/S-Harish.jpeg",
+        tags: [],
+    },
+    {
+        id: 12,
         name: "Ayush Barnwal",
         role: "Technical Advisor",
         image: "/team/ayush-barnwal.jpeg",
         tags: [],
     },
     {
-        id: 11,
+        id: 13,
         name: "Kusum Gupta",
         role: "Corporate Advisor",
         image: "/team/kusum-gupta.jpeg",
         tags: [],
     },
-    {
-        id: 12,
-        name: "S. Harish",
-        role: "Creatives Domain Head",
-        image: "/team/S-Harish.jpeg",
-        tags: [],
-    }
 ];
