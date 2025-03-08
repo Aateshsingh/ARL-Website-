@@ -22,7 +22,7 @@ export const events: Event[] = [
     {
         id: 3,
         type: 'past',
-        title: 'Tech for Good Hackathon',
+        title: 'Tekmux 2024',
         date: '2023-11-10 09:00',
         description: 'Developed solutions for social impact challenges',
         tags: ['Social Impact', 'Hackathon', 'Innovation'],
@@ -31,7 +31,7 @@ export const events: Event[] = [
     {
         id: 4,
         type: 'past',
-        title: 'IoT Workshop Series',
+        title: 'Tekmux 2023',
         date: '2023-09-20 16:00',
         description: 'Hands-on sessions with industry IoT experts',
         tags: ['IoT', 'Workshop', 'Hardware'],
@@ -40,7 +40,7 @@ export const events: Event[] = [
     {
         id: 5,
         type: 'past',
-        title: 'Open Innovation Challenge',
+        title: 'Tekmux 2022',
         date: '2023-07-15 09:00',
         description: 'Collaborative problem-solving for global challenges',
         tags: ['Innovation', 'Collaboration', 'SDGs']
