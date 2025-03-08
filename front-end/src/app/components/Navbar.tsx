@@ -77,7 +77,7 @@ export function Navbar() {
                 </Link>
 
                 <Link
-                  href="/domian"
+                  href="/domain"
                   className="text-sm font-medium text-gray-900 hover:text-gray-600"
                   onClick={() => setIsOpen(false)}
                 >
