@@ -87,65 +87,88 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: 'Smart Cane for Blind',
-      description: 'Navigate Life with Confidence',
-      tags: ['Obstacle Detection', 'Real-Time Feedback', 'Navigational Assistance', 'Emergency Communication', 'Impact'],
-      image: '/smartcane.jpeg',
+      title: "Smart Cane for Blind",
+      description: "Navigate Life with Confidence",
+      tags: [
+        "Obstacle Detection",
+        "Real-Time Feedback",
+        "Navigational Assistance",
+        "Emergency Communication",
+        "Impact",
+      ],
+      image: "/smartcane.jpeg",
     },
     {
       id: 2,
-      title: 'OSTEOPOROSIS',
-      description: 'Detection Using Custom CNN',
-      tags: ['Custom CNN Architecture', 'High Accuracy', 'Scalable', 'Impact'],
-      image: '/osteorobosis.jpeg',
+      title: "OSTEOPOROSIS",
+      description: "Detection Using Custom CNN",
+      tags: ["Custom CNN Architecture", "High Accuracy", "Scalable", "Impact"],
+      image: "/osteorobosis.jpeg",
     },
     {
       id: 3,
-      title: 'Solar panel and Battery Maintenance Using IoT',
-      description: '',
-      tags: ['Solar Panel', 'IoT Sensor', 'Smart Automated System'],
-      image: '/solar.jpeg',
+      title: "Solar panel and Battery Maintenance Using IoT",
+      description: "",
+      tags: ["Solar Panel", "IoT Sensor", "Smart Automated System"],
+      image: "/solar.jpeg",
     },
     {
       id: 4,
-      title: 'Penguin OS',
-      description: '',
-      tags: ['Enhanced Security', 'Open-Source Alternatives', 'Optimized Performance', 'Results'],
-      image: '/penguin.jpeg',
+      title: "Penguin OS",
+      description: "",
+      tags: [
+        "Enhanced Security",
+        "Open-Source Alternatives",
+        "Optimized Performance",
+        "Results",
+      ],
+      image: "/penguin.jpeg",
     },
   ];
-  
+
   const socialLinks = [
     { Icon: FaInstagram, url: "https://www.instagram.com/aakashresearchlabs/" },
-    { Icon: FaLinkedin, url: "https://www.linkedin.com/company/aakash-research-labs/" },
+    {
+      Icon: FaLinkedin,
+      url: "https://www.linkedin.com/company/aakash-research-labs/",
+    },
   ];
 
   return (
     <div className="relative">
       <div className="snap-y snap-mandatory h-[calc(100vh-64px)] overflow-y-auto scroll-smooth">
         {/* Hero Section */}
-        <section className="snap-start min-h-[calc(100vh-64px)] flex items-center justify-center w-full bg-gradient-to-br from-blue-300 via-blue-200 to-blue-400">
-          <div className="w-full px-4 sm:px-6 lg:px-8 pb-5">
+        <section className="relative snap-start min-h-[calc(100vh-64px)] flex items-center justify-center w-full bg-gradient-to-br bg-blue-500 overflow-hidden">
+          {/* First moving circle */}
+          <div className="absolute top-[90%] left-10 w-[400px] h-[400px] bg-gradient-to-br from-white to-blue-300 rounded-full opacity-30 animate-circle1 z-10"></div>
+
+          {/* Second moving circle */}
+          <div className="absolute bottom-[90%] right-10 w-[300px] h-[300px] bg-gradient-to-br from-blue-300 to-white rounded-full opacity-20 animate-circle2 z-10"></div>
+
+          <div className="w-full px-4 sm:px-6 lg:px-8 lg:pt-10 pb-5 relative z-20">
             <div className="flex flex-col-reverse md:flex-row justify-around items-center max-w-7xl mx-auto gap-8 md:gap-12">
               <div className="flex flex-col items-center md:items-start gap-5 text-center md:text-left mt-5 md:mt-0">
                 <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-                  AAKASH
+                  <span className="font-oswald">AAKASH</span>
                   <br />
-                  <span className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r text-white bg-clip-text text-transparent font-raleway font-bold">
                     RESEARCH LABS
                   </span>
                 </h1>
 
-                <p className="text-xl text-blue-900 max-w-2xl mt-4">
-                  Bridging innovation between academic research and real-world
-                  technological solutions
+                <p className="text-xl text-whit max-w-2xl mt-4">
+                  Facilitating the seamless transition from academic research to
+                  practical technological solutions by fostering collaboration,
+                  innovation, and applied science to address real-world
+                  challenges and drive meaningful advancements in various
+                  industries.
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-4 mt-8">
-                <Link href={"/domain"}>
-                  <Button className="bg-white text-blue-900 hover:bg-blue-100 px-3 py-2 md:px-8 md:py-6 text-lg font-semibold rounded-xl shadow-lg transition-all">
-                    Explore Domains
-                  </Button>
+                  <Link href={"/domain"}>
+                    <Button className="bg-white text-blue-900 hover:bg-blue-100 px-3 py-2 md:px-8 md:py-6 text-lg font-semibold rounded-xl shadow-lg transition-all">
+                      Explore Domains
+                    </Button>
                   </Link>
                   <Link href={"/join-us"}>
                     <Button
@@ -158,28 +181,28 @@ export default function Home() {
                 </div>
 
                 <div className="flex gap-6 mt-5 items-center">
-      <div className="flex gap-4">
-        {socialLinks.map(({ Icon, url }, i) => (
-          <Link
-            key={i}
-            href={url}
-            target="_blank"
-            className="p-3 bg-blue-500/10 rounded-full hover:bg-blue-500/20 transition-colors"
-          >
-            <Icon className="w-6 h-6 text-blue-500" />
-          </Link>
-        ))}
-      </div>
-    </div>
+                  <div className="flex gap-4">
+                    {socialLinks.map(({ Icon, url }, i) => (
+                      <Link
+                        key={i}
+                        href={url}
+                        target="_blank"
+                        className="p-3 bg-blue-500/10 rounded-full hover:bg-blue-500/20 transition-colors"
+                      >
+                        <Icon className="w-6 h-6 text-white" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <div className="relative group flex-shrink-0">
                 <Image
-                  src="/arl-logo.png"
+                  src="/arl-logo-white.png"
                   alt="Logo"
                   width={400}
                   height={400}
-                  className="w-48 sm:w-64 md:w-80 transition-transform duration-300 hover:scale-105"
+                  className="w-48 sm:w-64 md:w-80 lg:w-96 transition-transform duration-300 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               </div>
@@ -289,9 +312,9 @@ export default function Home() {
                       Vision
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Becoming Asia&apos;s premier student-led research ecosystem
-                      driving technological breakthroughs and nurturing future
-                      tech leaders by 2030.
+                      Becoming Asia&apos;s premier student-led research
+                      ecosystem driving technological breakthroughs and
+                      nurturing future tech leaders by 2030.
                     </p>
                   </div>
                 </div>
@@ -320,40 +343,40 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {projects.map((project) => (
-        <div
-          key={project.id}
-          className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all"
-        >
-          <div className="h-48 bg-gray-100 rounded-t-xl overflow-hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={400}
-              height={300}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-            />
-          </div>
-          <div className="p-6">
-            <h3 className="text-xl font-bold text-blue-900 mb-2">
-              {project.title}
-            </h3>
-            <p className="text-gray-600 mb-4">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      ))}
+                {projects.map((project) => (
+                  <div
+                    key={project.id}
+                    className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all"
+                  >
+                    <div className="h-48 bg-gray-100 rounded-t-xl overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-blue-900 mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -421,6 +444,14 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 gap-8">
+                {events.filter((event) => event.type === activeTab).length ===
+                  0 &&
+                  activeTab === "upcoming" && (
+                    <span className="md:absolute md:left-[40%] lg:left-[45%] text-gray-500 text-xl flex items-center justify-center">
+                      No upcoming events
+                    </span>
+                  )}
+
                 {events
                   .filter((event) => event.type === activeTab)
                   .map((event) =>
@@ -570,7 +601,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="snap-start min-h-[calc(100vh-64px)] flex items-center justify-center w-full bg-gradient-to-br from-blue-900 to-indigo-900">
+        <section className="snap-start min-h-[calc(100vh-64px)] flex flex-col items-center justify-center w-full bg-gradient-to-br from-blue-900 to-indigo-900">
           <div
             ref={(el) => {
               sectionsRef.current[6] = el;
@@ -591,15 +622,12 @@ export default function Home() {
                       <SiLinkedin className="w-6 h-6" />
                     </div>
                     <div>
-                        <a href="https://www.linkedin.com/company/aakash-research-labs/">
-                      <p className="font-medium">Connect Professionally</p>
-                      <p className="text-blue-200">
-                      </p>
-                        </a>
+                      <Link href="https://www.linkedin.com/company/aakash-research-labs/">
+                        <p className="font-medium">Connect Professionally</p>
+                        <p className="text-blue-200"></p>
+                      </Link>
                     </div>
                   </div>
-
-          
                 </div>
               </div>
 
@@ -664,6 +692,9 @@ export default function Home() {
                 </div>
               </form>
             </div>
+          </div>
+          <div className="text-white text-sm">
+            © 2025 ARL <span className="text-lg px-5">|</span> All rights reserved.
           </div>
         </section>
       </div>

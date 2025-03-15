@@ -88,7 +88,15 @@ function Page() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 gap-8">
+                {events.filter((event) => event.type === activeTab).length ===
+                  0 &&
+                  activeTab === "upcoming" && (
+                    <span className="md:absolute md:left-[40%] lg:left-[45%] text-gray-500 text-xl flex items-center justify-center">
+                      No upcoming events
+                    </span>
+                  )}
+
                 {events
                   .filter((event) => event.type === activeTab)
                   .map((event) =>
@@ -106,7 +114,10 @@ function Page() {
                               </p>
                               <p className="text-sm font-medium">
                                 {new Date(event.date)
-                                  .toLocaleString("default", { month: "short" })
+                                  .toLocaleString("default", {
+                                    month: "short",
+                                    year: undefined,
+                                  })
                                   .toUpperCase()}
                               </p>
                             </div>
@@ -167,36 +178,20 @@ function Page() {
                             />
                           ) : (
                             <div className="w-full h-full flex flex-col items-center justify-center bg-blue-100">
-                              {new Date(event.date).getMonth() === 0 &&
-                              new Date(event.date).getDate() === 1 ? (
-                                // Display only the year if the date is just a year (Jan 1st scenario)
-                                <p className="text-3xl font-bold">
-                                  {new Date(event.date).getFullYear()}
-                                </p>
-                              ) : (
-                                // Otherwise, show the original format
-                                <>
-                                  <p className="text-3xl font-bold">
-                                    {new Date(event.date).getDate()}
-                                  </p>
-                                  <p className="text-lg text-blue-800">
-                                    {new Date(event.date)
-                                      .toLocaleString("default", {
-                                        month: "short",
-                                      })
-                                      .toUpperCase()}
-                                  </p>
-                                  <p className="text-sm text-blue-600 mt-2">
-                                    {new Date(event.date).toLocaleTimeString(
-                                      [],
-                                      {
-                                        hour: "2-digit",
-                                        minute: "2-digit",
-                                      }
-                                    )}
-                                  </p>
-                                </>
-                              )}
+                              <p className="text-3xl font-bold">
+                                {new Date(event.date).getDate()}
+                              </p>
+                              <p className="text-lg text-blue-800">
+                                {new Date(event.date)
+                                  .toLocaleString("default", { month: "short" })
+                                  .toUpperCase()}
+                              </p>
+                              <p className="text-sm text-blue-600 mt-2">
+                                {new Date(event.date).toLocaleTimeString([], {
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                })}
+                              </p>
                             </div>
                           )}
                         </div>
